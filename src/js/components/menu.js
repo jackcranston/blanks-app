@@ -1,15 +1,17 @@
 /*
- * Menu
+ * Menu component
  */
 
 const menu = {
   init: function (ui, categories, stories) {
-    ui.update(menu.build(categories, stories));
+    ui.update(this.build(categories, stories));
 
     const menuButtons = document.querySelectorAll(".menu__link");
 
     menuButtons.forEach((button) => {
-      button.addEventListener("click", this.menuButtonClicked);
+      button.addEventListener("click", function (event) {
+        menu.buttonClicked(event, stories);
+      });
     });
 
     state.menuPosition = 1;
@@ -23,7 +25,7 @@ const menu = {
 
   loadMain: function (categories, stories) {
     return `<li class="menu__item">
-              <button class="menu__link" data-type="main" data-id="1">Play</button>
+              <button class="menu__link" data-type="main" data-id=1>Play</button>
               <ul class="menu__list hidden">${this.loadCategories(
                 categories,
                 stories
@@ -35,9 +37,9 @@ const menu = {
     return categories
       .map((category) => {
         return `<li class="menu__item">
-                <button class="menu__link" data-type="category" data-id="${
+                <button class="menu__link" data-type="category" data-id=${
                   category.id
-                }">
+                }>
                 ${category.title}
                 </button>
                 <ul class="menu__list hidden">${this.loadItems(
@@ -54,16 +56,18 @@ const menu = {
       .map((story) => {
         if (story.category === category.id) {
           return `<li class="menu__item">
-                    <button class="menu__link" data-type="story" data-id="${story.id}">${story.title}</button>
+                    <button class="menu__link" data-type="story" data-id=${story.id}>${story.title}</button>
                   </li>`;
         }
       })
       .join("");
   },
 
-  menuButtonClicked: function (event) {
+  buttonClicked: function (event, stories) {
     event.preventDefault();
-    const { type, id } = event.target.dataset;
+
+    const type = event.target.dataset.type;
+    const id = Number(event.target.dataset.id);
 
     if (type === "main") {
       const innerList = event.target.nextElementSibling;
@@ -76,8 +80,8 @@ const menu = {
       innerList.classList.remove("hidden");
       state.menuPosition = 3;
     } else {
+      form.init(stories, id);
       state.menuPosition = 0;
-      // open story
     }
   },
 };

@@ -5,6 +5,7 @@
 const state = {
   deviceLoaded: false,
   menuPosition: 0,
+  game: null,
 };
 
 const modules = [
@@ -13,6 +14,7 @@ const modules = [
   "text!data/words.json",
   "js/components/ui",
   "js/components/menu",
+  "js/components/form",
 ];
 
 define(modules, function (categoriesData, storiesDate, wordsData) {

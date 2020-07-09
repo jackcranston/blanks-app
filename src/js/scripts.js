@@ -24,61 +24,6 @@ var menuCounter = 0;
 /* classes */
 
 class Game {
-  loadMenu() {
-    var menuItem = document.querySelectorAll(".menu-item");
-
-    setTimeout(function () {
-      menuItem[menuCounter].classList.add("active");
-      menuCounter++;
-
-      if (menuCounter < menuItem.length) {
-        game.loadMenu();
-      }
-    }, 100);
-  }
-
-  loadCategories() {
-    nav.innerHTML =
-      '<a class="nav-button" onclick="game.returnConfirm(0)">< BACK</a>';
-    menu.innerHTML = "";
-
-    for (var i = 0; i < categories.length; i++) {
-      if (categories[i].owned == 1) {
-        menu.innerHTML +=
-          '<a class="menu-item" onclick="game.loadStories(' +
-          i +
-          ')">' +
-          categories[i].title +
-          "</a>";
-      } else {
-        menu.innerHTML +=
-          '<a class="menu-item not-owned" onclick="shop()">' +
-          categories[i].title +
-          "</a>";
-      }
-    }
-    game.loadMenu();
-    menuCounter = 0;
-  }
-
-  loadStories(x) {
-    nav.innerHTML =
-      '<a class="nav-button" onclick="game.loadCategories()">< BACK</a>';
-    menu.innerHTML = "";
-    for (var i = 0; i < stories.length; i++) {
-      if (stories[i].category == x) {
-        menu.innerHTML +=
-          '<a class="menu-item" onclick="setStory(' +
-          i +
-          ')">' +
-          stories[i].title +
-          "</a>";
-      }
-    }
-    game.loadMenu();
-    menuCounter = 0;
-  }
-
   quit(x) {
     if (x) {
       overlay.classList.add("active");
