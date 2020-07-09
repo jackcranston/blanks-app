@@ -24,7 +24,7 @@ define(modules, function (categoriesData, storiesDate, wordsData) {
     if (state.deviceLoaded === false) {
       state.deviceLoaded = true;
 
-      ui.update(menu.init(categories, stories));
+      menu.init(ui, categories, stories);
     }
   };
 

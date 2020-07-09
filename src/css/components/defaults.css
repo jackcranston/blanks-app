@@ -1,0 +1,26 @@
+/*
+ * Default styles
+ */
+
+@font-face {
+  font-family: "Quicksand";
+  src: url(fonts/Quicksand-VariableFont_wght.ttf);
+}
+
+* {
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+}
+
+body {
+  background: #0b161c;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-size: 1.5rem;
+}

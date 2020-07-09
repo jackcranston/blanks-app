@@ -12,4 +12,12 @@ const ui = {
   clear: function () {
     this.app.innerHTML = "";
   },
+
+  back: function () {
+    // return user to previous view
+  },
+
+  quit: function () {
+    // return user to main menu / quit app
+  },
 };
