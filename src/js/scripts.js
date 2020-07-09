@@ -21,67 +21,13 @@ var menuCounter = 0;
 
 /* app start */
 
-document.addEventListener("deviceready", deviceLoaded, false);
-document.addEventListener("DOMContentLoaded", deviceLoaded, false);
-
-function deviceLoaded() {
-  if (loaded == false) {
-    menu = document.querySelector(".menu");
-    nav = document.querySelector(".nav");
-    overlay = document.querySelector(".overlay");
-    formWrapper = document.querySelector(".form");
-    form = document.querySelector("form");
-    result = document.querySelector(".result");
-
-    loaded = true;
-    state = 1;
-    game = new Game();
-
-    if (localStorage.getItem("appUsed") == undefined) {
-      localStorage.setItem("appUsed", true);
-    } // checks if app launched before
-
-    /* populate menu */
-
-    menu.innerHTML +=
-      '<a onclick="game.loadCategories()" class="menu-item menu-item-green">Start game</a><a onclick="game.help(true)" class="menu-item">How to play</a>';
-    game.loadMenu();
-    menuCounter = 0;
-
-    /* quit listener */
-
-    document.addEventListener("backbutton", onBackKeyDown, false);
-
-    function onBackKeyDown(e) {
-      e.preventDefault();
-      if (state == 1) {
-        game.backButton();
-      } else if (state == 2) {
-        game.backButton();
-      } else if (state == 3) {
-      }
-    }
-
-    /* Set AdMobAds options: */
-
-    admob.setOptions({
-      publisherId: "ca-app-pub-1387967171751864~5623198328",
-      isTesting: true
-    });
-
-    admob.createBannerView();
-
-    admob.showBanner(admob.BannerSize.BANNER, admob.Position.BOTTOM_APP);
-  }
-}
-
 /* classes */
 
 class Game {
   loadMenu() {
     var menuItem = document.querySelectorAll(".menu-item");
 
-    setTimeout(function() {
+    setTimeout(function () {
       menuItem[menuCounter].classList.add("active");
       menuCounter++;
 
@@ -95,6 +41,7 @@ class Game {
     nav.innerHTML =
       '<a class="nav-button" onclick="game.returnConfirm(0)">< BACK</a>';
     menu.innerHTML = "";
+
     for (var i = 0; i < categories.length; i++) {
       if (categories[i].owned == 1) {
         menu.innerHTML +=

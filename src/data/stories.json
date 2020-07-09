@@ -1,0 +1,56 @@
+[
+  {
+    "id": 0,
+    "title": "TEST",
+    "text": "TEST #noun# #name#",
+    "category": 1
+  },
+  {
+    "id": 1,
+    "title": "A bad day",
+    "text": "#name# realised he had run out of #objects#, so decided to walk to the shop before going to his job as a #job#. Unfortunately, he had forgotten his #object#, and didn't realise until he had trod in a #adjective# pile of #adjective# #object# whilst #movementPresent# down the road. He had no choice but to carry on to the local #shop# shop, where the #adjective# shopkeeper handed him a #object# to clean his #object#.",
+    "category": 0
+  },
+  {
+    "id": 2,
+    "title": "The Delivery",
+    "text": "On a bright, #adjective# morning, #name# opened his front door to find someone had left a #object# on his doorstep during the night. He frantically opened it to find thatinside was a #container# and attached was a note reading 'this used to be your fathers, use it to clean your #object#'. The boy felt very #emotion#, and decided to ignore the note, choosing instead to use the object as a case for his #object#.",
+    "category": 0
+  },
+  {
+    "id": 3,
+    "title": "Short stories",
+    "text": "Every day, #name# uses her #adjective# mind to create short stories for her local #events#. She drinks lots of #liquid# so that she can think of the #adjective# stories to tell the local children who sadly do not have #nouns#. Unfortunately for them, she isn't a very #attribute# person, as she also likes to try and #verb# the children by showing them her #noun#.",
+    "category": 0
+  },
+  {
+    "id": 4,
+    "title": "Pensioners Secret",
+    "text": "In a small, #adjective# town called #town#, an #attribute# lady lives in a creepy cottage covered in #objects#. She can often be seen standing at her bedroom window, looking out at the locals whilst wearing her dirty #clothing# and holding her #object#. Unbeknownst to the locals, this old and #attribute# lady does take some pride in her appearance, and once a year takes a holiday via #vehicle# to the #destination# where she takes part in a competition for best dressed #noun#.",
+    "category": 0
+  },
+  {
+    "id": 5,
+    "title": "Muggers!",
+    "text": "On his way home late at night, #name# encountered some scary looking #animals#. He cowered at the size of their #bodyparts# which looked like #objects# against the backdrop. As he #movementPast# past, the #adjective# one of them squared up to him and #speechPast#, 'Give me all your #objects#'. The boy yelped in terror as he frantically reached into his pocket and clasped the one thing he knew would protect him - his trusty #object#.",
+    "category": 0
+  },
+  {
+    "id": 6,
+    "title": "Not all heroes wear capes",
+    "text": "It was a day like any other on the 50th floor of the office until a #job# noticed that one of the window cleaners was dangling by his fingertips from his platform without a safety harness. No one knew what had happened but one thing was for sure, he sure was #adjective#. <br><br>There was much commotion in the building at this point as people frantically tried to figure a way to save the #adjective# man, but then they saw it. Was it a bird? Was it a plane? No it was #name# the #adjective# superhero coming to save the day. <br><br>He #movementPast# in and #verbPast# the window cleaner from the platform and they floated gracefully to the ground below, the man #verbPast# his #bodypart# onto the sidewalk as the onlooking crowd #reactionPast#, what a #label#.",
+    "category": 0
+  },
+  {
+    "id": 7,
+    "title": "A day in the sun",
+    "text": "It was the perfect day for #activity#, the sun was shining - not a cloud in the sky. NAME and #name# had just started when they realised that neither of them had brought any #noun#, they were surely going to #fate#! Because of this they spent the rest of the day hiding under a friend's #noun# which was just big enough to shelter them from the intense midday heat, whilst taking sips of #liquid# from Barry’s #container# to stay hydrated.",
+    "category": 0
+  },
+  {
+    "id": 8,
+    "title": "Life's a beach",
+    "text": "The beach was #adjective# on a #adjective# bank holiday monday, this didn’t bother NAME who was more concerned about the #adjective# inflatable #noun# that someone had placed right in the way of his perfect view of the vast #adjective# sea. “That’s it” he #speechPast# as he #movementPast# to his feet, before strolling over and proceeding to strangle the lifeless bit of plastic until every last bit of air had been removed. The owner, a #adjective# #animal#, burst into #liquid# which didn’t seem to phase the man who simply returned to his spot, cracked open a #noun# and beamed at the much improved view ahead of him.",
+    "category": 0
+  }
+]

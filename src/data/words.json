@@ -1,0 +1,182 @@
+[
+  {
+    "type": "female",
+    "description": "a female name",
+    "examples": "Emily, Cinderella, Margaret Thatcher"
+  },
+  {
+    "type": "activity",
+    "description": "an activity",
+    "examples": "fishing, sailing, golf"
+  },
+  {
+    "type": "adjective",
+    "description": "a describing worD",
+    "examples": "giant, flexible, annoying"
+  },
+  {
+    "type": "animal",
+    "description": "an animal",
+    "examples": "cat, ant, human"
+  },
+  {
+    "type": "animals",
+    "description": "multiple animals",
+    "examples": "cats, ants, humans"
+  },
+  {
+    "type": "attribute",
+    "description": "a personal attribute",
+    "examples": "pretty, old, intelligent"
+  },
+  {
+    "type": "bodyfluid",
+    "description": "a bodily fluid",
+    "examples": "blood, sweat, tears"
+  },
+  {
+    "type": "bodypart",
+    "description": "a body part",
+    "examples": "arm, heart, nose"
+  },
+  {
+    "type": "bodyparts",
+    "description": "body parts (plural)",
+    "examples": "arms, hearts, noses"
+  },
+  {
+    "type": "clothing",
+    "description": "an item of clothing",
+    "examples": "socks, jeans, t-shirt"
+  },
+  {
+    "type": "container",
+    "description": "a container",
+    "examples": "box, case, chest"
+  },
+  {
+    "type": "destination",
+    "description": "a destination",
+    "examples": "chip shop, beach, supermarket"
+  },
+  {
+    "type": "emotion",
+    "description": "an emotion",
+    "examples": "happy, sad, heartbroken"
+  },
+  {
+    "type": "events",
+    "description": "an event",
+    "examples": "charity ball, concert, pub crawl"
+  },
+  {
+    "type": "fate",
+    "description": "a fate",
+    "examples": "die, burn, thrive"
+  },
+  {
+    "type": "job",
+    "description": "a job",
+    "examples": "nurse, postman, receptionist"
+  },
+  {
+    "type": "label",
+    "description": "a persons label",
+    "examples": "chav, hero, idiot"
+  },
+  {
+    "type": "liquid",
+    "description": "a liquid",
+    "examples": "water, coke, oil"
+  },
+  {
+    "type": "movementPast",
+    "description": "movement (past tense)",
+    "examples": "walked, flew, drifted"
+  },
+  {
+    "type": "movementPresent",
+    "description": "movement (present tense)",
+    "examples": "walking, flying, floating"
+  },
+  {
+    "type": "noun",
+    "description": "a noun",
+    "examples": "dog, man, coffee, chair"
+  },
+  {
+    "type": "nouns",
+    "description": "plural noun",
+    "examples": "dogs, women, chairs"
+  },
+  {
+    "type": "number",
+    "description": "a number",
+    "examples": "5, 21, 594"
+  },
+  {
+    "type": "object",
+    "description": "an object",
+    "examples": "pencil, cabbage, rock"
+  },
+  {
+    "type": "objects",
+    "description": "objects (plural)",
+    "examples": "tables, eggs, pebbles"
+  },
+  {
+    "type": "rand",
+    "description": "wildcard (anything goes)",
+    "examples": "?"
+  },
+  {
+    "type": "rands",
+    "description": "plural wildcard (anything goes)",
+    "examples": ""
+  },
+  {
+    "type": "reactionPast",
+    "description": "a reaction (past tense)",
+    "examples": "cried, cheered, booed"
+  },
+  {
+    "type": "shop",
+    "description": "a type of shop",
+    "examples": "chip, bike, retail"
+  },
+  {
+    "type": "speechPast",
+    "description": "speech (past tense)",
+    "examples": "said, yelled, roared"
+  },
+  {
+    "type": "town",
+    "description": "a village, town or city name",
+    "examples": "London, Paris, Farmville"
+  },
+  {
+    "type": "transport",
+    "description": "mode of transport",
+    "examples": "flying, canoeing, driving"
+  },
+  {
+    "type": "vehicle",
+    "description": "a vehicle",
+    "examples": "car, bus, rowing boat"
+  },
+  {
+    "type": "verb",
+    "description": "an action",
+    "examples": "scare, punch, kiss"
+  },
+  {
+    "type": "verbPast",
+    "description": "an action (past tense)",
+    "examples": "'scared, smashed, kissed"
+  },
+  {
+    "type": "verbPresent",
+    "description": "an action (present tense)",
+    "examples": "scares, smashes, kisses"
+  }
+]

@@ -2,20 +2,20 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     versionCode = "1"
-    version     = "0.5.0" >
+    version     = "1.0.0" >
 
   <access origin="*" />
 
 <!-- versionCode is optional and Android only -->
 
-  <name>BLANKS</name>
+  <name>Blanks</name>
 
   <description>
       The dark humoured fill in the blanks party game.
   </description>
 
-  <author href="https://palmware.co.uk" email="info@palmware.co.uk">
-      Palmware
+  <author href="https://jackcranston.co.uk" email="hello@jcranston.co.uk">
+      Jack Cranston
   </author>
 
   <icon src="icon.png" />
