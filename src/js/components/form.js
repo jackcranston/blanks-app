@@ -11,7 +11,13 @@ const form = {
     state.story = selectedStory;
     state.story.words = words;
 
-    ui.update(this.getForm(words, wordtypes));
+    ui.update(this.formElement(words, wordtypes));
+
+    // set up form event listener
+    const formElement = document.getElementById("form");
+    formElement.addEventListener("submit", function (event) {
+      form.submitStory(event);
+    });
   },
 
   // get story from stories.json
@@ -49,26 +55,62 @@ const form = {
   },
 
   // get form wrapper
-  getForm: function (words, wordtypes) {
-    return `<form>
-              ${this.getInputs(words, wordtypes)}
+  formElement: function (words, wordtypes) {
+    return `<form id="form">
+              ${this.inputElements(words, wordtypes)}
+              <fieldset>
+                <button>Create your story</button>
+              </fieldset>
             </form>`;
   },
 
   // get form inputs
-  getInputs: function (words, wordtypes) {
+  inputElements: function (words, wordtypes) {
     return words
       .map((word, index) => {
         const wordtype = this.getWordTypes(word, wordtypes);
 
         return `<fieldset>
-                <label for="input-${index}">
-                  <h2>${wordtype.type}</h2>
-                  <p>${wordtype.body}</p>
-                </label>
-                <input id="input-${index}" class="input" type="text" placeholder="e.g. ${wordtype.examples}">
-              </fieldset>`;
+                  <label for="input-${index}">
+                    <h2>${wordtype.type}</h2>
+                    <p>${wordtype.body}</p>
+                  </label>
+                  <input id="input-${index}" class="input" type="text" placeholder="e.g. ${wordtype.examples}">
+                </fieldset>`;
       })
       .join("");
+  },
+
+  // fired when user submits story form
+  submitStory: function (event) {
+    event.preventDefault();
+
+    const inputs = document.querySelectorAll("input");
+    const inputWords = [...inputs].map((input) => {
+      return input.value;
+    });
+
+    this.createStory(inputWords);
+  },
+
+  // replace original story templates with input values
+  createStory: function (inputWords) {
+    const { title, body, words } = state.story;
+
+    let createdStory = body;
+
+    words.forEach((word, index) => {
+      createdStory = createdStory.replace(word, inputWords[index]);
+    });
+
+    ui.update(this.storyElement(title, createdStory));
+  },
+
+  // story element
+  storyElement: function (title, createdStory) {
+    return `<div class="story">
+              <h1>${title}</h1>
+              <p>${createdStory}</p>
+            </div>`;
   },
 };

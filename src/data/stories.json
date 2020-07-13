@@ -1,8 +1,8 @@
 [
   {
     "id": 0,
-    "title": "TEST",
-    "body": "TEST {{noun}} {{name}}",
+    "title": "TEST STORY",
+    "body": "THE QUICK BROWN {{animal}} JUMPED OVER THE LAZY {{animal}}",
     "category": 1
   },
   {
