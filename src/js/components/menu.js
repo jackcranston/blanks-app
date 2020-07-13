@@ -3,14 +3,14 @@
  */
 
 const menu = {
-  init: function (ui, categories, stories) {
+  init: function (ui, categories, stories, wordtypes) {
     ui.update(this.build(categories, stories));
 
     const menuButtons = document.querySelectorAll(".menu__link");
 
     menuButtons.forEach((button) => {
       button.addEventListener("click", function (event) {
-        menu.buttonClicked(event, stories);
+        menu.buttonClicked(event, stories, wordtypes);
       });
     });
 
@@ -63,7 +63,7 @@ const menu = {
       .join("");
   },
 
-  buttonClicked: function (event, stories) {
+  buttonClicked: function (event, stories, wordtypes) {
     event.preventDefault();
 
     const type = event.target.dataset.type;
@@ -80,7 +80,7 @@ const menu = {
       innerList.classList.remove("hidden");
       state.menuPosition = 3;
     } else {
-      form.init(stories, id);
+      form.init(id, stories, wordtypes);
       state.menuPosition = 0;
     }
   },

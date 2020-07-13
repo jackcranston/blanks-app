@@ -5,28 +5,28 @@
 const state = {
   deviceLoaded: false,
   menuPosition: 0,
-  game: null,
+  story: null,
 };
 
 const modules = [
   "text!data/categories.json",
   "text!data/stories.json",
-  "text!data/words.json",
+  "text!data/wordtypes.json",
   "js/components/ui",
   "js/components/menu",
   "js/components/form",
 ];
 
-define(modules, function (categoriesData, storiesDate, wordsData) {
+define(modules, function (categoriesData, storiesDate, wordtypesData) {
   const categories = JSON.parse(categoriesData);
   const stories = JSON.parse(storiesDate);
-  const words = JSON.parse(wordsData);
+  const wordtypes = JSON.parse(wordtypesData);
 
   const deviceLoaded = () => {
     if (state.deviceLoaded === false) {
       state.deviceLoaded = true;
 
-      menu.init(ui, categories, stories);
+      menu.init(ui, categories, stories, wordtypes);
     }
   };
 
