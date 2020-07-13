@@ -13,11 +13,56 @@ const form = {
 
     ui.update(this.formElement(words, wordtypes));
 
-    // set up form event listener
+    // Event Listener - form navigation
+    state.formIndex = 0;
+
+    const inputGroups = document.querySelectorAll(".input-group");
+    const formNavigationButtons = document.querySelectorAll(
+      ".form-nav__button"
+    );
+
+    formNavigationButtons.forEach((navigationButton) => {
+      navigationButton.addEventListener("click", function (event) {
+        form.formNavigation(event, inputGroups);
+      });
+    });
+
+    inputGroups[0].classList.remove("hidden");
+
+    // Event Listener - form submit
     const formElement = document.getElementById("form");
     formElement.addEventListener("submit", function (event) {
       form.submitStory(event);
     });
+  },
+
+  // Handles form navigation buttons
+  formNavigation: function (event, inputGroups) {
+    event.preventDefault();
+
+    const nav = Number(event.target.dataset.nav);
+
+    // hide current input group
+    inputGroups[state.formIndex].classList.add("hidden");
+
+    // increase/decrease form index
+    state.formIndex += nav;
+
+    // show next input group
+    [...inputGroups].find((inputGroup) => {
+      if (Number(inputGroup.dataset.id) === state.formIndex) {
+        inputGroup.classList.remove("hidden");
+      }
+    });
+
+    if (state.formIndex === 0) {
+      document.getElementById("form-back").classList.add("hidden");
+    } else if (state.formIndex === inputGroups.length - 1) {
+      document.getElementById("form-next").classList.add("hidden");
+    } else {
+      document.getElementById("form-next").classList.remove("hidden");
+      document.getElementById("form-back").classList.remove("hidden");
+    }
   },
 
   // get story from stories.json
@@ -58,10 +103,14 @@ const form = {
   formElement: function (words, wordtypes) {
     return `<form id="form">
               ${this.inputElements(words, wordtypes)}
-              <fieldset>
+              <fieldset data-id=${words.length} class="input-group hidden">
                 <button>Create your story</button>
               </fieldset>
-            </form>`;
+            </form>
+            <div class="form-nav">
+              <button id="form-back" class="form-nav__button hidden" data-nav=-1>Back</button>
+              <button id="form-next" class="form-nav__button" data-nav=1>Next</button>
+            </div>`;
   },
 
   // get form inputs
@@ -70,7 +119,7 @@ const form = {
       .map((word, index) => {
         const wordtype = this.getWordTypes(word, wordtypes);
 
-        return `<fieldset>
+        return `<fieldset data-id=${index} class="input-group hidden">
                   <label for="input-${index}">
                     <h2>${wordtype.type}</h2>
                     <p>${wordtype.body}</p>
