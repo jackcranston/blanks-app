@@ -30,6 +30,6 @@ define(modules, function (categoriesData, storiesDate, wordtypesData) {
     }
   };
 
-  window.addEventListener("DOMContentLoaded", deviceLoaded());
-  document.addEventListener("deviceready", deviceLoaded());
+  window.addEventListener("DOMContentLoaded", deviceLoaded);
+  document.addEventListener("deviceready", deviceLoaded);
 });

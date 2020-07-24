@@ -31,9 +31,7 @@ const form = {
 
     // Event Listener - form submit
     const formElement = document.getElementById("form");
-    formElement.addEventListener("submit", function (event) {
-      form.submitStory(event);
-    });
+    formElement.addEventListener("submit", this.submitStory);
   },
 
   // Handles form navigation buttons

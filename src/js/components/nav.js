@@ -6,12 +6,10 @@ const nav = {
   init: function () {
     const headerNav = document.querySelector(".header-nav");
 
-    headerNav.addEventListener("click", function (event) {
-      this.headerNav(event);
-    });
+    headerNav.addEventListener("click", this.headerNav);
   },
 
-  headerNav: function () {
+  headerNav: function (event) {
     event.preventDefault();
     // handle header nav here -> back / quit etc
   },
