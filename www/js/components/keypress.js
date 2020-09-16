@@ -1,7 +1,7 @@
 /*
  * Handle keypresses
  */
-
+/*
 //document.addEventListener("backbutton", onBackKeyDown, false);
 
 const keypress = () => {
@@ -15,3 +15,6 @@ const keypress = () => {
     //???????
   }
 };
+
+export default keypress;
+*/

@@ -1,16 +1,18 @@
 /*
  * Menu component
  */
+import state from "../state";
+import form from "./form";
 
 const menu = {
   // initialise menu
-  init: function (ui, categories, stories, wordtypes) {
+  init: (ui, categories, stories, wordtypes) => {
     ui.update(this.menuElement(categories, stories));
 
     const menuButtons = document.querySelectorAll(".menu__link");
 
     menuButtons.forEach((button) => {
-      button.addEventListener("click", function (event) {
+      button.addEventListener("click", (event) => {
         menu.menuItemClicked(event, stories, wordtypes);
       });
     });
@@ -19,14 +21,14 @@ const menu = {
   },
 
   // wrapper for menu
-  menuElement: function (categories, stories) {
+  menuElement: (categories, stories) => {
     return `<ul class="menu__list">
               ${this.mainMenuElement(categories, stories)}
             </ul>`;
   },
 
   // top menu items
-  mainMenuElement: function (categories, stories) {
+  mainMenuElement: (categories, stories) => {
     return `<li class="menu__item">
               <button class="menu__link" data-type="main" data-id=1>Play</button>
               <ul class="menu__list hidden">${this.categoryElements(
@@ -37,7 +39,7 @@ const menu = {
   },
 
   // middle / category menu items
-  categoryElements: function (categories, stories) {
+  categoryElements: (categories, stories) => {
     return categories
       .map((category) => {
         return `<li class="menu__item">
@@ -56,23 +58,23 @@ const menu = {
   },
 
   // bottom / story menu items
-  storyElements: function (stories, category) {
+  storyElements: (stories, category) => {
     return stories
-      .map((story) => {
-        if (story.category === category.id) {
-          return `<li class="menu__item">
-                    <button class="menu__link" data-type="story" data-id=${story.id}>${story.title}</button>
-                  </li>`;
-        }
-      })
+      .map((story) =>
+        story.category === category.id
+          ? `<li class="menu__item">
+                <button class="menu__link" data-type="story" data-id=${story.id}>${story.title}</button>
+             </li>`
+          : ""
+      )
       .join("");
   },
 
   // fired when user clicks a menu item
-  menuItemClicked: function (event, stories, wordtypes) {
+  menuItemClicked: (event, stories, wordtypes) => {
     event.preventDefault();
 
-    const type = event.target.dataset.type;
+    const { type } = event.target.dataset;
     const id = Number(event.target.dataset.id);
 
     if (type === "main") {
@@ -94,3 +96,5 @@ const menu = {
     }
   },
 };
+
+export default menu;

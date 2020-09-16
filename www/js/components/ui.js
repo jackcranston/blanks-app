@@ -5,19 +5,21 @@
 const ui = {
   app: document.getElementById("app"),
 
-  update: function (contents) {
+  update: (contents) => {
     this.app.innerHTML = contents;
   },
 
-  clear: function () {
+  clear: () => {
     this.app.innerHTML = "";
   },
 
-  back: function () {
+  back: () => {
     // return user to previous view
   },
 
-  quit: function () {
+  quit: () => {
     // return user to main menu / quit app
   },
 };
+
+export default ui;

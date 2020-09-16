@@ -1,15 +1,6 @@
 /*
- * Load required modules
+ * Load required modules REDUNDANT FILE
  */
-
-requirejs.config({
-  baseUrl: "src",
-  paths: {
-    text: "js/text",
-  },
-});
-
-requirejs(["js/main"]);
 
 /* OLD CODE BACKUP
     <script src="assets/data.js" type="text/javascript"></script>

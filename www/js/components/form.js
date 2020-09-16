@@ -1,10 +1,12 @@
 /*
  * Form component
  */
+import state from "../state";
+import ui from "./ui";
 
 const form = {
   // Initialise form
-  init: function (id, stories, wordtypes) {
+  init: (id, stories, wordtypes) => {
     const selectedStory = this.getStory(id, stories);
     const words = this.getWords(selectedStory);
 
@@ -22,7 +24,7 @@ const form = {
     );
 
     formNavigationButtons.forEach((navigationButton) => {
-      navigationButton.addEventListener("click", function (event) {
+      navigationButton.addEventListener("click", (event) => {
         form.formNavigation(event, inputGroups);
       });
     });
@@ -35,10 +37,13 @@ const form = {
   },
 
   // Handles form navigation buttons
-  formNavigation: function (event, inputGroups) {
+  formNavigation: (event, inputGroups) => {
     event.preventDefault();
 
     const nav = Number(event.target.dataset.nav);
+
+    const formBack = document.getElementById("form-back");
+    const formNext = document.getElementById("form-next");
 
     // hide current input group
     inputGroups[state.formIndex].classList.add("hidden");
@@ -47,33 +52,29 @@ const form = {
     state.formIndex += nav;
 
     // show next input group
-    [...inputGroups].find((inputGroup) => {
+    [...inputGroups].forEach((inputGroup) => {
       if (Number(inputGroup.dataset.id) === state.formIndex) {
         inputGroup.classList.remove("hidden");
       }
     });
 
     if (state.formIndex === 0) {
-      document.getElementById("form-back").classList.add("hidden");
+      formBack.classList.add("hidden");
     } else if (state.formIndex === inputGroups.length - 1) {
-      document.getElementById("form-next").classList.add("hidden");
+      formNext.classList.add("hidden");
     } else {
-      document.getElementById("form-next").classList.remove("hidden");
-      document.getElementById("form-back").classList.remove("hidden");
+      formNext.classList.remove("hidden");
+      formBack.classList.remove("hidden");
     }
   },
 
   // get story from stories.json
-  getStory: function (id, stories) {
-    return stories.find((story) => {
-      if (story.id === id) {
-        return story;
-      }
-    });
+  getStory: (id, stories) => {
+    return stories.find((story) => (story.id === id ? story : false));
   },
 
   // extract template words from story
-  getWords: function (selectedStory) {
+  getWords: (selectedStory) => {
     // pattern to match anything in double curly braces {{ }}
     const regexPattern = /\{{.*?\}}/g;
     const templateWordsArray = selectedStory.body.match(regexPattern);
@@ -82,23 +83,21 @@ const form = {
   },
 
   // remove template braces from word
-  getStrippedWord: function (word) {
+  getStrippedWord: (word) => {
     return word.replace("{{", "").replace("}}", "");
   },
 
   // get word details from wordtypes.json
-  getWordTypes: function (word, wordtypes) {
+  getWordTypes: (word, wordtypes) => {
     const strippedWord = this.getStrippedWord(word);
 
-    return wordtypes.find((wordtype) => {
-      if (wordtype.type === strippedWord) {
-        return wordtype;
-      }
-    });
+    return wordtypes.find((wordtype) =>
+      wordtype.type === strippedWord ? wordtype : false
+    );
   },
 
   // get form wrapper
-  formElement: function (words, wordtypes) {
+  formElement: (words, wordtypes) => {
     return `<form id="form">
               ${this.inputElements(words, wordtypes)}
               <fieldset data-id=${words.length} class="input-group hidden">
@@ -112,7 +111,7 @@ const form = {
   },
 
   // get form inputs
-  inputElements: function (words, wordtypes) {
+  inputElements: (words, wordtypes) => {
     return words
       .map((word, index) => {
         const wordtype = this.getWordTypes(word, wordtypes);
@@ -129,7 +128,7 @@ const form = {
   },
 
   // fired when user submits story form
-  submitStory: function (event) {
+  submitStory: (event) => {
     event.preventDefault();
 
     const inputs = document.querySelectorAll("input");
@@ -141,7 +140,7 @@ const form = {
   },
 
   // replace original story templates with input values
-  createStory: function (inputWords) {
+  createStory: (inputWords) => {
     const { title, body, words } = state.story;
 
     let createdStory = body;
@@ -154,10 +153,12 @@ const form = {
   },
 
   // story element
-  storyElement: function (title, createdStory) {
+  storyElement: (title, createdStory) => {
     return `<div class="story">
               <h1>${title}</h1>
               <p>${createdStory}</p>
             </div>`;
   },
 };
+
+export default form;

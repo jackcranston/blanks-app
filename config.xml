@@ -14,7 +14,7 @@
       The dark humoured fill in the blanks party game.
   </description>
 
-  <author href="https://jackcranston.co.uk" email="hello@jcranston.co.uk">
+  <author href="https://jackcranston.co.uk" email="hello@jackcranston.co.uk">
       Jack Cranston
   </author>
 
@@ -35,10 +35,8 @@
   <preference name="SplashScreenDelay" value="5000" />
   <preference name="SplashScreen" value="screen"/>
 
-  <splash src="res/screen/android/splash-ldpi.png" platform="android" density="land-ldpi" />
-  <splash src="res/screen/android/splash-mdpi.png" platform="android" density="land-mdpi" />
-  <splash src="res/screen/android/splash-hdpi.png" platform="android" density="land-hdpi" />
-
-<gap:plugin name="phonegap-admob" source="npm"/>
+  <splash src="./res/screen/android/splash-ldpi.png" platform="android" density="land-ldpi" />
+  <splash src="./res/screen/android/splash-mdpi.png" platform="android" density="land-mdpi" />
+  <splash src="./res/screen/android/splash-hdpi.png" platform="android" density="land-hdpi" />
 
 </widget>
